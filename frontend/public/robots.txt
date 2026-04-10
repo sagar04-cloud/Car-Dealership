@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /login
+Disallow: /register
+Disallow: /my-bookings
+
+# Sitemap
+Sitemap: https://drivexmotors.com/sitemap.xml
+
+# Crawl-delay (optional, be careful with this)
+# Crawl-delay: 1
