@@ -18,6 +18,8 @@ const CarListings: React.FC = () => {
   });
   const location = useLocation();
 
+  const { current, limit } = pagination;
+
   useEffect(() => {
     setLoading(true);
     const queryParams = new URLSearchParams(location.search);
@@ -46,8 +48,8 @@ const CarListings: React.FC = () => {
     const unsubscribe = CarService.subscribeToCars(
       filters,
       sort,
-      pagination.current,
-      pagination.limit,
+      current,
+      limit,
       ({ cars, total }) => {
         setCars(cars);
         setPagination(prev => ({
@@ -60,7 +62,7 @@ const CarListings: React.FC = () => {
     );
 
     return () => unsubscribe();
-  }, [location.search, pagination.current, pagination.limit]);
+  }, [location.search, current, limit]);
 
   const handlePageChange = (page: number) => {
     setPagination((prev) => ({ ...prev, current: page }));
