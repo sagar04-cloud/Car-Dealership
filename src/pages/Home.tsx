@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronRight, Star, Shield, Clock, Award } from 'lucide-react';
+import { ArrowRight, Star, Shield, Clock, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import toast from 'react-hot-toast';
 import { Car as CarType } from '../types';
 import CarCard from '../components/cars/CarCard';
 import SearchFilter from '../components/search/SearchFilter';
@@ -88,13 +87,6 @@ const Home: React.FC = () => {
       },
     },
   };
-
-  const stats = [
-    { icon: Award, value: '10+', label: 'Years Experience' },
-    { icon: Shield, value: '500+', label: 'Cars Sold' },
-    { icon: Clock, value: '24/7', label: 'Support Available' },
-    { icon: Star, value: '4.9', label: 'Customer Rating' },
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-[#0A0C10] dark:to-slate-900 transition-colors duration-500">

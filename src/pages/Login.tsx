@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Lock, Mail, ArrowRight, UserPlus } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -9,9 +9,8 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const { login, isAuthenticated, isAdmin, user } = useAuth();
+  const { login, isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
 
   // Redirect if already logged in
   React.useEffect(() => {

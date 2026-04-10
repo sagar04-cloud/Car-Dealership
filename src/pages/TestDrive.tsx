@@ -29,13 +29,7 @@ const TestDrive: React.FC = () => {
     notes: '',
   });
 
-  useEffect(() => {
-    if (id) {
-      fetchCar();
-    }
-  }, [id]);
-
-  const fetchCar = async () => {
+  const fetchCar = React.useCallback(async () => {
     try {
       const carData = await CarService.getCar(id!);
       setCar(carData);
@@ -44,7 +38,13 @@ const TestDrive: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    if (id) {
+      fetchCar();
+    }
+  }, [id, fetchCar]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

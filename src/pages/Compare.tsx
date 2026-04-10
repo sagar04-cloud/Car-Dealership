@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { ArrowLeft, Trash2, Check, X } from 'lucide-react';
+import { ArrowLeft, Trash2 } from 'lucide-react';
 import { useWishlist } from '../hooks/useWishlist';
 
 const Compare: React.FC = () => {

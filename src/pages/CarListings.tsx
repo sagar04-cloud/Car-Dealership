@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import toast from 'react-hot-toast';
 import { Car as CarType } from '../types';
 import CarCard from '../components/cars/CarCard';
 import SearchFilter from '../components/search/SearchFilter';
@@ -54,7 +53,7 @@ const CarListings: React.FC = () => {
         setPagination(prev => ({
           ...prev,
           total,
-          pages: Math.ceil(total / pagination.limit) || 1
+          pages: Math.ceil(total / prev.limit) || 1
         }));
         setLoading(false);
       }

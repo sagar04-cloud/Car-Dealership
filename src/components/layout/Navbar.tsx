@@ -7,7 +7,7 @@ import { useAuth } from '../../context/AuthContext';
 
 const Navbar: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
-  const { user, isAdmin, logout, isAuthenticated } = useAuth();
+  const { isAdmin, logout, isAuthenticated } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
