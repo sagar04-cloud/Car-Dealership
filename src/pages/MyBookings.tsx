@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import BookingService, { IBooking } from '../services/bookingService';
-import CarService, { ICar } from '../services/carService';
+import BookingService from '../services/bookingService';
+import CarService from '../services/carService';
+import { Booking, Car } from '../types';
 import { Calendar, Clock, CheckCircle, Clock3, XCircle } from 'lucide-react';
 
 const MyBookings: React.FC = () => {
   const { user, isAuthenticated } = useAuth();
-  const [bookings, setBookings] = useState<IBooking[]>([]);
-  const [cars, setCars] = useState<Record<string, ICar>>({});
+  const [bookings, setBookings] = useState<Booking[]>([]);
+  const [cars, setCars] = useState<Record<string, Car>>({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const MyBookings: React.FC = () => {
       setBookings(bookings);
       
       // Fetch car details for the bookings
-      const carData: Record<string, ICar> = {};
+      const carData: Record<string, Car> = {};
       await Promise.all(
         bookings.map(async (booking) => {
           if (!carData[booking.carId]) {

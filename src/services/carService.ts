@@ -10,31 +10,12 @@ import {
   child
 } from 'firebase/database';
 
-export interface ICar {
-  id?: string;
-  brand: string;
-  model: string;
-  year: number;
-  price: number;
-  images: string[];
-  fuelType: 'Petrol' | 'Diesel' | 'Electric' | 'Hybrid' | 'CNG';
-  transmission: 'Manual' | 'Automatic';
-  mileage: number;
-  description: string;
-  features: string[];
-  status: 'available' | 'sold';
-  featured: boolean;
-  color: string;
-  engineCapacity: string;
-  seatingCapacity: number;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import { Car } from '../types';
 
 const CARS_COLLECTION = 'cars';
 
 export const CarService = {
-  async createCar(data: Omit<ICar, 'id' | 'createdAt' | 'updatedAt'>): Promise<ICar> {
+  async createCar(data: Omit<Car, 'id' | 'createdAt' | 'updatedAt'>): Promise<Car> {
     const now = new Date();
     const carsRef = ref(realtimeDb, CARS_COLLECTION);
     const newCarRef = push(carsRef);
@@ -47,7 +28,7 @@ export const CarService = {
     return { id: newCarRef.key as string, ...data, createdAt: now, updatedAt: now };
   },
 
-  async getCar(id: string): Promise<ICar | null> {
+  async getCar(id: string): Promise<Car | null> {
     const docRef = ref(realtimeDb, `${CARS_COLLECTION}/${id}`);
     const snapshot = await get(docRef);
     if (snapshot.exists()) {
@@ -59,15 +40,15 @@ export const CarService = {
         features: data.features || [],
         createdAt: new Date(data.createdAt),
         updatedAt: new Date(data.updatedAt)
-      } as ICar;
+      } as Car;
     }
     return null;
   },
 
-  async getCars(filters?: any, sort?: any, page: number = 1, pageSize: number = 12): Promise<{ cars: ICar[]; total: number }> {
+  async getCars(filters?: any, sort?: any, page: number = 1, pageSize: number = 12): Promise<{ cars: Car[]; total: number }> {
     const carsRef = ref(realtimeDb, CARS_COLLECTION);
     const snapshot = await get(carsRef);
-    let cars: ICar[] = [];
+    let cars: Car[] = [];
     
     if (snapshot.exists()) {
       snapshot.forEach(childSnapshot => {
@@ -115,7 +96,7 @@ export const CarService = {
         return aVal < bVal ? 1 : -1;
       });
     } else {
-      cars.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+      cars.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
     }
     
     const total = cars.length;
@@ -131,12 +112,12 @@ export const CarService = {
     sort: any,
     page: number = 1,
     pageSize: number = 12,
-    callback: (data: { cars: ICar[]; total: number }) => void
+    callback: (data: { cars: Car[]; total: number }) => void
   ): () => void {
     const carsRef = ref(realtimeDb, CARS_COLLECTION);
     
     const unsubscribe = onValue(carsRef, (snapshot) => {
-      let cars: ICar[] = [];
+      let cars: Car[] = [];
       if (snapshot.exists()) {
         snapshot.forEach(childSnapshot => {
           const data = childSnapshot.val();
@@ -182,7 +163,7 @@ export const CarService = {
           return aVal < bVal ? 1 : -1;
         });
       } else {
-        cars.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+        cars.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
       }
       
       const total = cars.length;
@@ -195,7 +176,7 @@ export const CarService = {
     return () => unsubscribe();
   },
 
-  async updateCar(id: string, data: Partial<ICar>): Promise<ICar | null> {
+  async updateCar(id: string, data: Partial<Car>): Promise<Car | null> {
     const docRef = ref(realtimeDb, `${CARS_COLLECTION}/${id}`);
     const snapshot = await get(docRef);
     if (!snapshot.exists()) return null;
@@ -204,7 +185,7 @@ export const CarService = {
     const updateData = { ...data, updatedAt: now.toISOString() };
     await update(docRef, updateData);
     
-    return { id, ...snapshot.val(), ...updateData, updatedAt: now } as ICar;
+    return { id, ...snapshot.val(), ...updateData, updatedAt: now } as Car;
   },
 
   async deleteCar(id: string): Promise<boolean> {

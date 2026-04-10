@@ -10,24 +10,12 @@ import {
   child
 } from 'firebase/database';
 
-export interface IBooking {
-  id?: string;
-  carId: string;
-  name: string;
-  email: string;
-  phone: string;
-  date: Date | string; // Dates are stored as ISO strings in RTDB
-  time: string;
-  status: 'pending' | 'confirmed' | 'cancelled' | 'completed';
-  notes?: string;
-  createdAt: Date | string;
-  updatedAt: Date | string;
-}
+import { Booking } from '../types';
 
 const BOOKINGS_COLLECTION = 'bookings';
 
 export const BookingService = {
-  async createBooking(data: Omit<IBooking, 'id' | 'createdAt' | 'updatedAt'>): Promise<IBooking> {
+  async createBooking(data: Omit<Booking, 'id' | 'createdAt' | 'updatedAt'>): Promise<Booking> {
     const now = new Date();
     const bookingsRef = ref(realtimeDb, BOOKINGS_COLLECTION);
     const newBookingRef = push(bookingsRef);
@@ -41,7 +29,7 @@ export const BookingService = {
     return { id: newBookingRef.key as string, ...data, createdAt: now, updatedAt: now };
   },
 
-  async getBooking(id: string): Promise<IBooking | null> {
+  async getBooking(id: string): Promise<Booking | null> {
     const docRef = ref(realtimeDb, `${BOOKINGS_COLLECTION}/${id}`);
     const snapshot = await get(docRef);
     if (snapshot.exists()) {
@@ -52,15 +40,15 @@ export const BookingService = {
         date: data.date,
         createdAt: new Date(data.createdAt),
         updatedAt: new Date(data.updatedAt)
-      } as IBooking;
+      } as Booking;
     }
     return null;
   },
 
-  async getBookings(filters?: { status?: string }, page: number = 1, pageSize: number = 20): Promise<{ bookings: IBooking[]; total: number }> {
+  async getBookings(filters?: { status?: string }, page: number = 1, pageSize: number = 20): Promise<{ bookings: Booking[]; total: number }> {
     const bookingsRef = ref(realtimeDb, BOOKINGS_COLLECTION);
     const snapshot = await get(bookingsRef);
-    let bookings: IBooking[] = [];
+    let bookings: Booking[] = [];
     
     if (snapshot.exists()) {
       snapshot.forEach(childSnapshot => {
@@ -91,12 +79,12 @@ export const BookingService = {
   // Real-time listener
   subscribeToBookings(
     filters: { status?: string, email?: string } | undefined,
-    callback: (data: { bookings: IBooking[]; total: number }) => void
+    callback: (data: { bookings: Booking[]; total: number }) => void
   ): () => void {
     const bookingsRef = ref(realtimeDb, BOOKINGS_COLLECTION);
     
     const unsubscribe = onValue(bookingsRef, (snapshot) => {
-      let bookings: IBooking[] = [];
+      let bookings: Booking[] = [];
       if (snapshot.exists()) {
         snapshot.forEach(childSnapshot => {
           const data = childSnapshot.val();
@@ -124,7 +112,7 @@ export const BookingService = {
     return () => unsubscribe();
   },
 
-  async updateBookingStatus(id: string, status: IBooking['status']): Promise<IBooking | null> {
+  async updateBookingStatus(id: string, status: Booking['status']): Promise<Booking | null> {
     const docRef = ref(realtimeDb, `${BOOKINGS_COLLECTION}/${id}`);
     const snapshot = await get(docRef);
     if (!snapshot.exists()) return null;
@@ -133,7 +121,7 @@ export const BookingService = {
     const updateData = { status, updatedAt: now.toISOString() };
     await update(docRef, updateData);
     
-    return { id, ...snapshot.val(), ...updateData, updatedAt: now } as IBooking;
+    return { id, ...snapshot.val(), ...updateData, updatedAt: now } as Booking;
   },
 
   async deleteBooking(id: string): Promise<boolean> {

@@ -4,18 +4,7 @@ import toast from 'react-hot-toast';
 import { ArrowLeft, Check, X, Calendar, Clock, User, Mail, Phone, Filter } from 'lucide-react';
 import BookingService from '../../services/bookingService';
 
-interface Booking {
-  id: string;
-  carId: string;
-  name: string;
-  email: string;
-  phone: string;
-  date: Date;
-  time: string;
-  status: 'pending' | 'confirmed' | 'cancelled' | 'completed';
-  notes?: string;
-  createdAt: Date;
-}
+import { Booking } from '../../types';
 
 const BookingsManagement: React.FC = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
@@ -153,14 +142,14 @@ const BookingsManagement: React.FC = () => {
                         {booking.status === 'pending' && (
                           <>
                             <button
-                              onClick={() => handleStatusChange(booking.id, 'confirmed')}
+                              onClick={() => handleStatusChange(booking.id!, 'confirmed')}
                               className="flex items-center space-x-1 px-3 py-1 bg-green-100 text-green-700 rounded-lg hover:bg-green-200"
                             >
                               <Check className="h-4 w-4" />
                               <span>Confirm</span>
                             </button>
                             <button
-                              onClick={() => handleStatusChange(booking.id, 'cancelled')}
+                              onClick={() => handleStatusChange(booking.id!, 'cancelled')}
                               className="flex items-center space-x-1 px-3 py-1 bg-red-100 text-red-700 rounded-lg hover:bg-red-200"
                             >
                               <X className="h-4 w-4" />
@@ -170,7 +159,7 @@ const BookingsManagement: React.FC = () => {
                         )}
                         {booking.status === 'confirmed' && (
                           <button
-                            onClick={() => handleStatusChange(booking.id, 'completed')}
+                            onClick={() => handleStatusChange(booking.id!, 'completed')}
                             className="flex items-center space-x-1 px-3 py-1 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
                           >
                             <Check className="h-4 w-4" />
@@ -178,7 +167,7 @@ const BookingsManagement: React.FC = () => {
                           </button>
                         )}
                         <button
-                          onClick={() => handleDelete(booking.id)}
+                          onClick={() => handleDelete(booking.id!)}
                           className="px-3 py-1 text-red-600 hover:bg-red-50 rounded-lg"
                         >
                           Delete

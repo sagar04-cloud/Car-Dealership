@@ -1,6 +1,6 @@
-import { ICar } from '../services/carService';
+import { Car } from '../types';
 
-const SITE_URL = 'https://drivexmotors.com';
+const SITE_URL = 'https://ssxmotors.com';
 
 interface SitemapPage {
   url: string;
@@ -9,7 +9,7 @@ interface SitemapPage {
   lastmod?: string | Date;
 }
 
-export const generateSitemap = (cars: ICar[] = []) => {
+export const generateSitemap = (cars: Car[] = []) => {
   const staticPages: SitemapPage[] = [
     { url: '/', priority: 1.0, changefreq: 'daily' },
     { url: '/cars', priority: 0.9, changefreq: 'daily' },

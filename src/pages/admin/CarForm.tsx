@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Plus, X, Save, Link as LinkIcon } from 'lucide-react';
 import toast from 'react-hot-toast';
-import CarService, { ICar } from '../../services/carService';
+import { Car } from '../../types';
+import CarService from '../../services/carService';
 
-const emptyForm: Omit<ICar, 'id' | 'createdAt' | 'updatedAt'> = {
+const emptyForm: Omit<Car, 'id' | 'createdAt' | 'updatedAt'> = {
   brand: '',
   model: '',
   year: new Date().getFullYear(),
@@ -39,7 +40,7 @@ const CarForm: React.FC = () => {
     if (isEditing && id) {
       CarService.getCar(id).then((car) => {
         if (car) {
-          const { id: _id, createdAt, updatedAt, ...rest } = car as ICar;
+          const { id: _id, createdAt, updatedAt, ...rest } = car as Car;
           setForm({
             ...rest,
             features: rest.features?.length ? rest.features : [''],
