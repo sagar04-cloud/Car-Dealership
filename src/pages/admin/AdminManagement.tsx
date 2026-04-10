@@ -10,7 +10,7 @@ import {
   EmailAuthProvider,
   reauthenticateWithCredential,
 } from 'firebase/auth';
-import { ref, get, set, remove, child } from 'firebase/database';
+import { ref, get, set, remove } from 'firebase/database';
 import { auth, realtimeDb } from '../../config/firebase';
 import { useAuth } from '../../context/AuthContext';
 

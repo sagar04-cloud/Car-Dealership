@@ -6,8 +6,7 @@ import {
   set, 
   update, 
   remove, 
-  onValue,
-  child
+  onValue
 } from 'firebase/database';
 
 import { Car } from '../types';

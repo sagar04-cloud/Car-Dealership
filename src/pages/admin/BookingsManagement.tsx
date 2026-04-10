@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { ArrowLeft, Check, X, Calendar, Clock, User, Mail, Phone, Filter } from 'lucide-react';
+import { ArrowLeft, Check, X, Calendar, User, Mail, Phone, Filter } from 'lucide-react';
 import BookingService from '../../services/bookingService';
 
 import { Booking } from '../../types';

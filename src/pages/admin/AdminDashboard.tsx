@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { Shield, Users, Calendar, TrendingUp, LogOut, Plus, List, ChevronRight } from 'lucide-react';
+import { Shield, Calendar, TrendingUp, LogOut, Plus, List, ChevronRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 import CarService from '../../services/carService';
 import BookingService from '../../services/bookingService';
@@ -16,7 +16,6 @@ const AdminDashboard: React.FC = () => {
     pendingBookings: 0,
   });
   const [recentBookings, setRecentBookings] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Subscribe to real-time cars data
@@ -27,7 +26,6 @@ const AdminDashboard: React.FC = () => {
         availableCars: cars.filter((c: any) => c.status === 'available').length,
         soldCars: cars.filter((c: any) => c.status === 'sold').length,
       }));
-      setLoading(false);
     });
 
     // Subscribe to real-time bookings data
