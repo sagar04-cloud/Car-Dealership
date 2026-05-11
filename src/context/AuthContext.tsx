@@ -23,17 +23,17 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Hardcoded admin credentials (used when Firebase Auth is unavailable)
 const LOCAL_ADMIN = {
-  email: 'admin@ssxmotors.com',
+  email: 'admin@ssmotors.com',
   password: 'admin123',
   user: {
     id: 'local-admin',
-    email: 'admin@ssxmotors.com',
+    email: 'admin@ssmotors.com',
     role: 'admin' as const,
     name: 'Admin',
   },
 };
 
-const SESSION_KEY = 'ssx_local_user';
+const SESSION_KEY = 'ss_motors_local_user';
 
 // Helper to read/write the local fallback session
 const getLocalSession = (): User | null => {

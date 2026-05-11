@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
         <div className="text-center mb-16">
           <span className="text-accent font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-3 block">Concierge Services</span>
           <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white tracking-tight mb-4">
-            Connect With <span className="italic font-light">SSX</span>
+            Connect With <span className="italic font-light">SS</span>
           </h1>
           <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
             Whether you're looking to acquire a new masterpiece, schedule a consultation, or sell your premium vehicle, our concierge team is at your absolute disposal.
@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Email Reservations</p>
-                    <p className="text-slate-900 dark:text-white font-medium">concierge@ssxmotors.com</p>
+                    <p className="text-slate-900 dark:text-white font-medium">concierge@ssmotors.com</p>
                   </div>
                 </div>
 

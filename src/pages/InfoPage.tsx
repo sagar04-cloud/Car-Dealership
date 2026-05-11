@@ -9,11 +9,11 @@ const InfoPage: React.FC = () => {
     switch (location.pathname) {
       case '/about':
         return {
-          title: 'About SSX MOTORS',
+          title: 'About SS MOTORS',
           subtitle: 'Our Heritage & Vision',
           content: (
             <>
-              <p className="mb-6">Founded on the principle that buying a luxury vehicle should be as exceptional as driving one, SSX MOTORS has revolutionized the premium automotive market.</p>
+              <p className="mb-6">Founded on the principle that buying a luxury vehicle should be as exceptional as driving one, SS MOTORS has revolutionized the premium automotive market.</p>
               <p className="mb-6">We don't just sell cars; we curate collections. Every vehicle in our showroom undergoes a rigorous 300-point inspection by factory-certified master technicians. Our commitment to excellence ensures that whether you're acquiring a classic masterpiece or the latest hypercar, you are receiving absolute perfection.</p>
               <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mt-12 mb-6">Our Philosophy</h3>
               <p>Transparency, exclusivity, and unparalleled client care. We aim to build lifelong relationships with our clientele, providing white-glove service that extends far beyond the point of sale.</p>
@@ -22,11 +22,11 @@ const InfoPage: React.FC = () => {
         };
       case '/careers':
         return {
-          title: 'Careers at SSX',
+          title: 'Careers at SS',
           subtitle: 'Join the Elite',
           content: (
             <>
-              <p className="mb-6">We are always looking for exceptional talent to join our growing team. At SSX MOTORS, we foster an environment of passion, precision, and performance.</p>
+              <p className="mb-6">We are always looking for exceptional talent to join our growing team. At SS MOTORS, we foster an environment of passion, precision, and performance.</p>
               <div className="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 mt-8">
                 <h4 className="font-bold text-slate-900 dark:text-white mb-2">Current Openings</h4>
                 <ul className="space-y-4 mt-6">
@@ -52,20 +52,20 @@ const InfoPage: React.FC = () => {
       case '/press':
         return {
           title: 'Press & Media',
-          subtitle: 'SSX in the News',
+          subtitle: 'SS in the News',
           content: (
             <>
               <p className="mb-8">Latest announcements, press releases, and media coverage.</p>
               <div className="space-y-8">
                 <article>
                   <p className="text-accent text-sm font-bold mb-2">October 2025</p>
-                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3">SSX MOTORS Expands to European Market</h4>
+                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3">SS MOTORS Expands to European Market</h4>
                   <p className="text-slate-600 dark:text-slate-400">Announcing our new flagship showroom opening in Monaco, bringing our curated collection to the European elite.</p>
                 </article>
                 <article>
                   <p className="text-accent text-sm font-bold mb-2">June 2025</p>
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Voted #1 Luxury Dealership</h4>
-                  <p className="text-slate-600 dark:text-slate-400">MotorTrend luxury division ranks SSX highest in client satisfaction and inventory quality for the third consecutive year.</p>
+                  <p className="text-slate-600 dark:text-slate-400">MotorTrend luxury division ranks SS highest in client satisfaction and inventory quality for the third consecutive year.</p>
                 </article>
               </div>
             </>
@@ -111,7 +111,7 @@ const InfoPage: React.FC = () => {
             <div className="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 space-y-4">
               <p>Last Updated: October 1, 2025</p>
               <h4 className="text-slate-900 dark:text-white font-bold mt-8 mb-4">1. Agreement to Terms</h4>
-              <p>By accessing or using the SSX MOTORS website, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you may not access our services.</p>
+              <p>By accessing or using the SS MOTORS website, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you may not access our services.</p>
               <h4 className="text-slate-900 dark:text-white font-bold mt-8 mb-4">2. Vehicle Listings and Availability</h4>
               <p>While we strive for accuracy, inventory changes rapidly. A vehicle listed on our website does not guarantee its availability. Prices are subject to change without prior notice.</p>
             </div>
@@ -123,7 +123,7 @@ const InfoPage: React.FC = () => {
           subtitle: 'Data Protection',
           content: (
             <div className="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 space-y-4">
-              <p>At SSX MOTORS, client confidentiality is paramount. We adhere to the strictest data protection standards.</p>
+              <p>At SS MOTORS, client confidentiality is paramount. We adhere to the strictest data protection standards.</p>
               <h4 className="text-slate-900 dark:text-white font-bold mt-8 mb-4">Information Collection</h4>
               <p>We collect information necessary to provide our premium services, verify identity for high-value transactions, and fulfill legal requirements. This includes contact details, financial information (when applying for financing), and browsing data.</p>
               <h4 className="text-slate-900 dark:text-white font-bold mt-8 mb-4">Data Security</h4>

@@ -38,7 +38,7 @@ const SellCar: React.FC = () => {
           {/* Selling Process Info */}
           <div className="lg:col-span-5 space-y-12 pr-0 lg:pr-8">
             <div>
-              <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-8">The SSX Advantage</h2>
+              <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-8">The SS MOTORS Advantage</h2>
               <div className="space-y-8">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">

@@ -323,7 +323,7 @@ const AdminManagement: React.FC = () => {
             <div className="px-6 py-8 text-center">
               <Shield className="h-12 w-12 text-gray-300 dark:text-gray-600 mx-auto mb-3" />
               <p className="text-gray-500 dark:text-gray-400">No admin accounts found in Firestore.</p>
-              <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">The local admin (admin@ssxmotors.com) is built-in.</p>
+              <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">The local admin (admin@ssmotors.com) is built-in.</p>
             </div>
           ) : (
             <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -361,7 +361,7 @@ const AdminManagement: React.FC = () => {
           <div className="px-6 py-3 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-750 rounded-b-lg">
             <p className="text-xs text-gray-400 dark:text-gray-500 flex items-center space-x-1">
               <Shield className="h-3 w-3" />
-              <span>Built-in admin: admin@ssxmotors.com (cannot be removed from here)</span>
+              <span>Built-in admin: admin@ssmotors.com (cannot be removed from here)</span>
             </p>
           </div>
         </div>

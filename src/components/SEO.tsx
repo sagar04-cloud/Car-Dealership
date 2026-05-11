@@ -8,11 +8,11 @@ interface SEOProps {
   image?: string;
 }
 
-const defaultTitle = 'SSX MOTORS | Premium Car Dealership';
-const defaultDescription = 'Explore luxury and premium cars at SSX MOTORS. Buy, sell, compare, and test drive the finest vehicles.';
+const defaultTitle = 'SS MOTORS | Premium Car Dealership';
+const defaultDescription = 'Explore luxury and premium cars at SS MOTORS. Buy, sell, compare, and test drive the finest vehicles.';
 
 const SEO: React.FC<SEOProps> = ({ title, description, url, image }) => {
-  const pageTitle = title ? `${title} | SSX MOTORS` : defaultTitle;
+  const pageTitle = title ? `${title} | SS MOTORS` : defaultTitle;
   const pageDescription = description || defaultDescription;
   const pageUrl = url || window.location.origin;
   const pageImage = image || `${window.location.origin}/logo.png`;

@@ -13,8 +13,8 @@ export interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'SSXMOTORS - Premium Car Dealership',
-  description = 'Find your dream car at SSXMOTORS. Wide selection of new and used cars with competitive prices. Test drive available.',
+  title = 'SS MOTORS - Premium Car Dealership',
+  description = 'Find your dream car at SS MOTORS. Wide selection of new and used cars with competitive prices. Test drive available.',
   keywords = 'car dealership, buy cars, used cars, new cars, car sales, test drive, automotive, vehicles',
   image = '/og-image.jpg',
   url = window.location.href,
@@ -22,9 +22,9 @@ const SEO: React.FC<SEOProps> = ({
   noIndex = false,
   structuredData = []
 }) => {
-  const siteTitle = 'SSXMOTORS';
+  const siteTitle = 'SS MOTORS';
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
-  const siteUrl = 'https://ssxmotors.com';
+  const siteUrl = 'https://ssmotors.com';
 
   return (
     <Helmet>
@@ -32,7 +32,7 @@ const SEO: React.FC<SEOProps> = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="SSXMOTORS" />
+      <meta name="author" content="SS MOTORS" />
       <meta name="robots" content={noIndex ? 'noindex,nofollow' : 'index,follow'} />
       <meta name="googlebot" content={noIndex ? 'noindex,nofollow' : 'index,follow'} />
       

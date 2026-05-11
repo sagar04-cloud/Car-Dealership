@@ -81,9 +81,9 @@ const Register: React.FC = () => {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-6">
-            <img src="/logo.png" alt="SSX MOTORS Logo" className="h-14 w-auto object-contain dark:invert" />
+            <img src="/logo.png" alt="SS MOTORS Logo" className="h-14 w-auto object-contain dark:invert" />
             <span className="text-2xl font-bold text-gray-900 dark:text-white">
-              SSX<span className="text-accent">MOTORS</span>
+              SS<span className="text-accent"> MOTORS</span>
             </span>
           </div>
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white">

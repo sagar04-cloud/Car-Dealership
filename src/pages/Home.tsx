@@ -20,9 +20,9 @@ const Home: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "AutomotiveBusiness",
-      "name": "SSXMOTORS",
-      "url": "https://ssxmotors.com",
-      "logo": "https://ssxmotors.com/logo.png",
+      "name": "SS MOTORS",
+      "url": "https://ssmotors.com",
+      "logo": "https://ssmotors.com/logo.png",
       "description": "Premium car dealership offering new and used vehicles with competitive prices and excellent service.",
       "address": {
         "@type": "PostalAddress",
@@ -35,19 +35,19 @@ const Home: React.FC = () => {
       "telephone": "+1-555-0123",
       "openingHours": "Mo-Fr 09:00-19:00, Sa 10:00-18:00, Su Closed",
       "sameAs": [
-        "https://www.facebook.com/ssxmotors",
-        "https://www.instagram.com/ssxmotors",
-        "https://www.twitter.com/ssxmotors"
+        "https://www.facebook.com/ssmotors",
+        "https://www.instagram.com/ssmotors",
+        "https://www.twitter.com/ssmotors"
       ]
     },
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "SSXMOTORS",
-      "url": "https://ssxmotors.com",
+      "name": "SS MOTORS",
+      "url": "https://ssmotors.com",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://ssxmotors.com/cars?search={search_term_string}",
+        "target": "https://ssmotors.com/cars?search={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -91,8 +91,8 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-[#0A0C10] dark:to-slate-900 transition-colors duration-500">
       <SEO 
-        title="Premium Car Dealership - Find Your Dream Car | SSXMOTORS"
-        description="Discover luxury and performance vehicles at SSXMOTORS. Wide selection of new and used cars with competitive prices, financing options, and exceptional service. Visit us today!"
+        title="Premium Car Dealership - Find Your Dream Car | SS MOTORS"
+        description="Discover luxury and performance vehicles at SS MOTORS. Wide selection of new and used cars with competitive prices, financing options, and exceptional service. Visit us today!"
         keywords="luxury cars, sports cars, SUV dealership, premium vehicles, car financing, test drive, certified pre-owned, automotive dealership"
         structuredData={structuredData}
       />
@@ -281,7 +281,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Why SSX Section - Redesigned */}
+      {/* Why SS MOTORS Section - Redesigned */}
       <section className="py-32 bg-white dark:bg-slate-900 overflow-hidden relative">
         <div className="max-w-7xl mx-auto section-padding relative z-10">
           <div className="text-center mb-20">

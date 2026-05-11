@@ -1,6 +1,6 @@
 import { Car } from '../types';
 
-const SITE_URL = 'https://ssxmotors.com';
+const SITE_URL = 'https://ssmotors.com';
 
 interface SitemapPage {
   url: string;

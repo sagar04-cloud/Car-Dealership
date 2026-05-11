@@ -100,18 +100,18 @@ const CarDetail: React.FC = () => {
       "availability": car.status === 'available' ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "seller": {
         "@type": "AutomotiveBusiness",
-        "name": "SSXMOTORS",
-        "url": "https://ssxmotors.com"
+        "name": "SS MOTORS",
+        "url": "https://ssmotors.com"
       }
     },
     "image": car.images?.[0] || '/default-car.jpg',
-    "url": `https://ssxmotors.com/cars/${car.id}`
+    "url": `https://ssmotors.com/cars/${car.id}`
   }] : [];
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
       <SEO 
-        title={`${car.year} ${car.brand} ${car.model} - ${formatPrice(car.price)} | SSXMOTORS`}
+        title={`${car.year} ${car.brand} ${car.model} - ${formatPrice(car.price)} | SS MOTORS`}
         description={`Explore this ${car.year} ${car.brand} ${car.model} with ${car.fuelType} engine, ${car.transmission} transmission. Features include ${car.features.slice(0, 3).join(', ')}. ${car.description.substring(0, 150)}`}
         keywords={`${car.brand} ${car.model}, ${car.year}, buy ${car.brand}, ${car.fuelType} car, ${car.transmission}, luxury cars, certified pre-owned`}
         image={car.images?.[0]}

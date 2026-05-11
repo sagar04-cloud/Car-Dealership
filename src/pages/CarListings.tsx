@@ -72,7 +72,7 @@ const CarListings: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
       <SEO 
-        title="Browse Cars - Complete Inventory | SSXMOTORS"
+        title="Browse Cars - Complete Inventory | SS MOTORS"
         description="Explore our complete inventory of new and used cars. Filter by brand, price, fuel type, and more. Find your perfect vehicle with detailed specs and photos."
         keywords="car inventory, buy cars online, car search, vehicle listings, auto dealership, used cars, new cars, car finder"
       />

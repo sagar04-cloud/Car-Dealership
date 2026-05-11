@@ -33,10 +33,10 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto section-padding">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105 duration-500" aria-label="DriveX Motors Home">
-              <img src="/logo.png" alt="SSX MOTORS Logo" className="h-12 w-auto object-contain dark:invert" />
+            <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105 duration-500" aria-label="SS MOTORS Home">
+              <img src="/logo.png" alt="SS MOTORS Logo" className="h-12 w-auto object-contain dark:invert" />
               <span className="text-2xl font-display font-black text-slate-900 dark:text-white tracking-tighter">
-                SSX<span className="text-accent underline decoration-accent/30 underline-offset-4">MOTORS</span>
+                SS<span className="text-accent underline decoration-accent/30 underline-offset-4"> MOTORS</span>
               </span>
             </Link>
 

@@ -40,9 +40,9 @@ const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2 group">
-              <img src="/logo.png" alt="SSX MOTORS Logo" className="h-12 w-auto object-contain dark:invert" />
+              <img src="/logo.png" alt="SS MOTORS Logo" className="h-12 w-auto object-contain dark:invert" />
               <span className="text-2xl font-display font-black text-slate-900 dark:text-white tracking-tighter">
-                SSX<span className="text-accent underline decoration-accent/30 underline-offset-4">MOTORS</span>
+                SS<span className="text-accent underline decoration-accent/30 underline-offset-4"> MOTORS</span>
               </span>
             </Link>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-xs font-light">
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-slate-600 dark:text-slate-400 text-xs font-bold group cursor-pointer hover:text-accent dark:hover:text-white transition-colors">
                 <Mail className="h-4 w-4 text-accent" />
-                <span>concierge@ssxmotors.com</span>
+                <span>concierge@ssmotors.com</span>
               </div>
               <div className="flex items-center space-x-3 text-slate-600 dark:text-slate-400 text-xs font-bold group cursor-pointer hover:text-accent dark:hover:text-white transition-colors">
                 <Phone className="h-4 w-4 text-accent" />
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
         <div className="mt-20 pt-10 border-t border-slate-100 dark:border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 text-slate-500">
             <p className="text-xs font-bold tracking-wide">
-              &copy; {currentYear} SSX MOTORS. Crafted for Excellence.
+              &copy; {currentYear} SS MOTORS. Crafted for Excellence.
             </p>
             <div className="flex items-center space-x-6">
               {socialLinks.map((social) => (
